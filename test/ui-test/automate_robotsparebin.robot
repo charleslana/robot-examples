@@ -2,6 +2,7 @@
 Library     RPA.Browser.Playwright
 Library     Collections
 Library     String
+Resource    ../utils/utils.robot
 
 
 *** Variables ***
@@ -42,18 +43,8 @@ Login
     END
     RETURN    ${is_visible}
 
-Generate Random
-    [Arguments]    ${length}
-    ${random_string}=    Generate Random String    ${length}
-    RETURN    ${random_string}
-
-Generate Random Digits
-    [Arguments]    ${count}
-    ${random_digits}=    Evaluate    ''.join([str(random.randint(0, 9)) for _ in range(${count})])    modules=random
-    RETURN    ${random_digits}
-
 Fill Form
-    ${random_string}=    Generate Random    10
+    ${random_string}=    Generate Random Strings    10
     ${random_digits}=    Generate Random Digits    10
     Fill Text    \#firstname    ${random_string}
     Fill Text    \#salesresult    ${random_digits}

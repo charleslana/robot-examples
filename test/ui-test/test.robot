@@ -14,9 +14,10 @@ Automate https://robotsparebinindustries.com/
 Fill form https://robotsparebinindustries.com/
     [Documentation]    Form in robotsparebinindustries
     [Tags]    form
-    Open new browser    https://robotsparebinindustries.com/
-    Login
-    Fill Form
+    Given Open new browser    https://robotsparebinindustries.com/
+    When Login
+    And Fill Form
+    Then Should Ok
 
 My slow task
     [Documentation]    Slow test
@@ -29,9 +30,14 @@ My slow task
     END
 
 Test Random String
-    ${random_string}=    Generate Random    255
+    ${random_string}=    Generate Random Strings    255
     Console Log    ${random_string}
 
 Test Random Numbers
     ${random_digits}=    Generate Random Digits    2
     Console Log    ${random_digits}
+
+
+*** Keywords ***
+Should Ok
+    Console Log    Ok
