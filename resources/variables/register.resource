@@ -3,5 +3,6 @@ Documentation       Arquivos de variáveis globais criação de conta
 
 
 *** Variables ***
-${ACTION_REGISTER}      xpath=//a[@data-testid='cadastrar']
+${REGISTER_ACTION}      xpath=//a[@data-testid='cadastrar']
 ${INPUT_NOME}           id=nome
+${REGISTER_BUTTON}      css=[data-testid="cadastrar"]

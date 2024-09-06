@@ -24,6 +24,12 @@ Execução de testes por tags e paralelo informado -i "flag" -i "flag2" (pode te
 robot -i login -i slow  tests/ui-test/register_ui.robot
 ```
 
+Execução de testes em ordem de arquivos
+
+```
+robot -d results tests/ui-test/register_ui.robot tests/ui-test/login_ui.robot
+```
+
 ## Salvar log em outra pasta (opcional) (por padrão é results)
 
 Especificar com -d "pasta"
