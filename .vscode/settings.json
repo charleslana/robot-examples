@@ -2,5 +2,16 @@
   "python.analysis.extraPaths": [
     "/home/charles/Documentos/Development/robot-examples/."
   ],
-  "robot.libraries.blacklist": ["RPA.Browser", "RPA.Browser.Selenium"]
+  "robot.libraries.blacklist": ["RPA.Browser", "RPA.Browser.Selenium"],
+  "launch": {
+    "configurations": [
+      {
+        "type": "robotframework-lsp",
+        "name": "Robot Framework: Launch Template",
+        "request": "launch",
+        "terminal": "integrated",
+        "args": ["--argumentfile", "arguments.txt"]
+      }
+    ]
+  }
 }

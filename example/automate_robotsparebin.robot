@@ -2,7 +2,7 @@
 Library     RPA.Browser.Playwright
 Library     Collections
 Library     String
-Resource    ../utils/utils.robot
+Resource    utils.robot
 
 
 *** Variables ***

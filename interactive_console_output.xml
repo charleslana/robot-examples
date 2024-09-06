@@ -1,152 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20240905 16:24:45.711" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20240906 11:00:37.026" rpa="false" schemaversion="4">
 <suite id="s1" name="Robot Interactive Console" source="/home/charles/.vscode/extensions/robocorp.robotframework-lsp-1.12.0/src/robotframework_ls/vendored/robotframework_interactive/robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test" line="5">
 <kw name="Interpreter Main Loop" library="MainLoop">
-<kw name="Open new browser" library="automate_robotsparebin">
-<arg>https://robotsparebinindustries.com/</arg>
-<kw name="New Browser" library="RPA.Browser.Playwright">
-<arg>browser=${BROWSER}</arg>
-<arg>headless=${HEADLESS}</arg>
+<kw name="Open Browser" library="RPA.Browser.Playwright">
+<arg>url=https://robotsparebinindustries.com/</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
-<doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" starttime="20240905 16:24:48.897" endtime="20240905 16:24:49.671"/>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.</doc>
+<status status="PASS" starttime="20240906 11:00:46.100" endtime="20240906 11:00:47.776"/>
 </kw>
-<kw name="New Context" library="RPA.Browser.Playwright">
-<arg>locale=pt-BR</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Create a new BrowserContext with specified options.</doc>
-<status status="PASS" starttime="20240905 16:24:49.672" endtime="20240905 16:24:49.693"/>
-</kw>
-<kw name="New Page" library="RPA.Browser.Playwright">
-<arg>${url}</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Open a new Page.</doc>
-<status status="PASS" starttime="20240905 16:24:49.693" endtime="20240905 16:24:50.521"/>
-</kw>
-<status status="PASS" starttime="20240905 16:24:48.896" endtime="20240905 16:24:50.521"/>
-</kw>
-<kw name="Login" library="automate_robotsparebin">
-<var>${logged_in}</var>
-<kw name="Set Viewport Size" library="RPA.Browser.Playwright">
-<arg>600</arg>
-<arg>900</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Sets current Pages viewport size to specified dimensions.</doc>
-<status status="PASS" starttime="20240905 16:24:50.522" endtime="20240905 16:24:50.594"/>
-</kw>
-<kw name="Get From Dictionary" library="Collections">
-<var>${username}</var>
-<arg>${credentials}</arg>
-<arg>username</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20240905 16:24:50.595" level="INFO">${username} = maria</msg>
-<status status="PASS" starttime="20240905 16:24:50.595" endtime="20240905 16:24:50.595"/>
-</kw>
-<kw name="Get From Dictionary" library="Collections">
-<var>${password}</var>
-<arg>${credentials}</arg>
-<arg>password</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20240905 16:24:50.596" level="INFO">${password} = thoushallnotpass</msg>
-<status status="PASS" starttime="20240905 16:24:50.596" endtime="20240905 16:24:50.596"/>
-</kw>
-<kw name="Fill Text" library="RPA.Browser.Playwright">
-<arg>\#username</arg>
-<arg>${username}</arg>
+<kw name="Record Selector" library="RPA.Browser.Playwright">
 <tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" starttime="20240905 16:24:50.596" endtime="20240905 16:24:50.649"/>
+<doc>Record the selector that is under mouse.</doc>
+<status status="PASS" starttime="20240906 11:00:57.734" endtime="20240906 11:01:05.355"/>
 </kw>
-<kw name="Type Secret" library="RPA.Browser.Playwright">
-<arg>\#password</arg>
-<arg>$password</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Types the given secret from ``variable_name`` into the text field
-found by ``selector``.</doc>
-<status status="PASS" starttime="20240905 16:24:50.649" endtime="20240905 16:24:50.711"/>
+<status status="PASS" starttime="20240906 11:00:37.041" endtime="20240906 11:01:13.771"/>
 </kw>
-<kw name="Click" library="RPA.Browser.Playwright">
-<arg>.btn</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" starttime="20240905 16:24:50.711" endtime="20240905 16:24:50.773"/>
-</kw>
-<kw name="Wait For Elements State" library="RPA.Browser.Playwright">
-<arg>${logout}</arg>
-<arg>timeout=5s</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" starttime="20240905 16:24:50.773" endtime="20240905 16:24:53.112"/>
-</kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${is_visible}</var>
-<arg>Wait For Elements State</arg>
-<arg>${logout}</arg>
-<arg>timeout=5s</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Wait For Elements State" library="RPA.Browser.Playwright">
-<arg>${logout}</arg>
-<arg>timeout=5s</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" starttime="20240905 16:24:53.112" endtime="20240905 16:24:53.120"/>
-</kw>
-<msg timestamp="20240905 16:24:53.120" level="INFO">${is_visible} = True</msg>
-<status status="PASS" starttime="20240905 16:24:53.112" endtime="20240905 16:24:53.120"/>
-</kw>
-<if>
-<branch type="IF" condition="${is_visible}">
-<kw name="ConsoleLog" library="automate_robotsparebin">
-<arg>O logout está visível</arg>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${log}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240905 16:24:53.121" endtime="20240905 16:24:53.121"/>
-</kw>
-<status status="PASS" starttime="20240905 16:24:53.121" endtime="20240905 16:24:53.121"/>
-</kw>
-<status status="PASS" starttime="20240905 16:24:53.120" endtime="20240905 16:24:53.121"/>
-</branch>
-<branch type="ELSE">
-<kw name="ConsoleLog" library="automate_robotsparebin">
-<arg>O logout não está visível após o login</arg>
-<status status="NOT RUN" starttime="20240905 16:24:53.122" endtime="20240905 16:24:53.122"/>
-</kw>
-<status status="NOT RUN" starttime="20240905 16:24:53.121" endtime="20240905 16:24:53.122"/>
-</branch>
-<status status="PASS" starttime="20240905 16:24:53.120" endtime="20240905 16:24:53.122"/>
-</if>
-<return>
-<value>${is_visible}</value>
-<status status="PASS" starttime="20240905 16:24:53.122" endtime="20240905 16:24:53.122"/>
-</return>
-<msg timestamp="20240905 16:24:53.122" level="INFO">${logged_in} = True</msg>
-<status status="PASS" starttime="20240905 16:24:50.521" endtime="20240905 16:24:53.122"/>
-</kw>
-<kw name="ConsoleLog" library="automate_robotsparebin">
-<arg>${logged_in}</arg>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${log}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240905 16:24:53.123" endtime="20240905 16:24:53.124"/>
-</kw>
-<status status="PASS" starttime="20240905 16:24:53.122" endtime="20240905 16:24:53.124"/>
-</kw>
-<status status="PASS" starttime="20240905 16:24:45.727" endtime="20240905 16:25:00.905"/>
-</kw>
-<status status="PASS" starttime="20240905 16:24:45.727" endtime="20240905 16:25:00.905"/>
+<status status="PASS" starttime="20240906 11:00:37.041" endtime="20240906 11:01:13.772"/>
 </test>
-<status status="PASS" starttime="20240905 16:24:45.712" endtime="20240905 16:25:00.911"/>
+<status status="PASS" starttime="20240906 11:00:37.026" endtime="20240906 11:01:13.777"/>
 </suite>
 <statistics>
 <total>

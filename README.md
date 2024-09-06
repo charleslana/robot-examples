@@ -1,27 +1,75 @@
-# Template: Robot Framework - Browser automation with Playwright
+# Robot-Examples
 
-Want to build a [Playwright](https://playwright.dev/)-based browser robot? Great!
+Lembre-se de estar na pasta do projeto para continuar os passos abaixo
 
-This template robot:
+[1 passo: instalar o python no linux](docs/Install-python.md)
 
-- Uses [Robot Framework](https://robocorp.com/docs/languages-and-frameworks/robot-framework/basics) syntax.
-- Includes all the necessary dependencies and initialization commands (`conda.yaml`).
-- Solves the form challenge posted at http://rpachallenge.com. (`tasks.robot`).
+[2 passo: Configurar o python](docs/Settings-python.md)
 
-## RPA Form challenge
+[3 passo: Instalar dependências](docs/Install-dependencies.md)
 
-The challenge consists of downloading an Excel spreadsheet, extracting the data from it and filling the form on the website with the data for ten times.
+[4 passo: Configuração de IDE](docs/Settins-ide.md)
 
-More in detail, when run, this robot will:
+## Executar testes
 
-- download the test Excel file from the rpachallenge.com website
-- collect the data from the downloaded Excel file
-- start the challenge clicking on the Start button
-- loop through the data and fill the forms for 10 times
-- take a screenshot of the results page
-- write log and report files
-- close the browser
+Executar todos os testes definindo o path da pasta
 
-## Learning materials
+```
+robot test/ui-test/
+```
 
-- [Using the Robot Framework Browser library, based on Playwright](https://robocorp.com/docs/development-guide/browser/playwright)
+Execução de testes por tags e paralelo informado -i "flag" -i "flag2" (pode ter mais de um -i "flag")
+
+```
+robot -i login -i slow  test/ui-test/test.robot
+```
+
+## Salvar log em outra pasta (opcional) (por padrão é results)
+
+Especificar com -d "pasta"
+
+```
+robot -d logs test/ui-test/test.robot
+```
+
+## Extras (opcional)
+
+### Sobre o Robot Framework
+
+[Documentação do Robot Framework](https://docs.robotframework.org/docs)
+
+### Instalar dependências caso ocorra algum erro com o pip, usar a flag --break-system-packages
+
+```
+pip install "package" --break-system-packages
+```
+
+### Criar um novo projeto usando o Robot Framework Language Server
+
+Ctrl + Shift + P e Selecionar
+
+```
+Robo Framework: Start Interactive Console
+```
+
+### Interagir com Console do Interactive Console
+
+Exemplo
+
+Open Browser e selecione RPA.Browser.Playwright
+
+Para abrir a URL
+
+```
+Open Browser    url=https://robotsparebinindustries.com/
+```
+
+Existem outros comandos , além disso você pode utilizar o comando abaixo para fazer um recordes dos seletores da página aberta
+
+```
+Record Selector
+```
+
+### O que é TDD
+
+[Leia sobre o assunto aqui](docs/tdd.md)

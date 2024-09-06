@@ -22,3 +22,4 @@ output.xml
 playwright-log.txt
 report.html
 browser
+interactive_console_output.xml
