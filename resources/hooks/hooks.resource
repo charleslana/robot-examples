@@ -18,4 +18,10 @@ Start Browser
     New Page    ${BASE_URL}
 
 Finish Browser
-    Take Screenshot    fullPage=true
+    Capture Screenshot
+    Close Context
+    Close Browser
+
+Capture Screenshot
+    # Take Screenshot    %{ROBOT_ARTIFACTS}${/}result.png    fullPage=true
+    Run Keyword If Test Failed    Take Screenshot    fullPage=true

@@ -4,17 +4,18 @@ Library     String
 
 *** Keywords ***
 Generate Random Strings
-    [Arguments]    ${length}
+    [Arguments]    ${length}=10
     ${random_string}=    Generate Random String    ${length}
     RETURN    ${random_string}
 
 Generate Random Digits
-    [Arguments]    ${count}
+    [Arguments]    ${count}=10
     ${random_digits}=    Evaluate    ''.join([str(random.randint(0, 9)) for _ in range(${count})])    modules=random
     RETURN    ${random_digits}
 
 Generate Random Email
-    ${random_email}=    Generate Random Strings    10
+    ${length}=    Set Variable    10
+    ${random_email}=    Generate Random Strings    ${length}
     ${complete_email}=    Set Variable    ${random_email}@email.com
     Log    ${complete_email}
     Console Log    ${complete_email}

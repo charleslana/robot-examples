@@ -1,6 +1,6 @@
 --variable language:pt
 --outputdir results
---timestampoutput
+# --timestampoutput
 --console verbose
 --consolemarkers on
 --loglevel TRACE:INFO

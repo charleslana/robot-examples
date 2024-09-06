@@ -5,8 +5,13 @@ Resource            ../base.resource
 
 
 *** Keywords ***
-Quando O usuário clica em Cadastre-se
+O usuário clica em Cadastre-se
     Click    ${ACTION_REGISTER}
 
-Quando o usuário preenche o formulário de cadastro
-    Fill Text    ${INPUT_NOME}    txt
+O usuário preenche o formulário de cadastro
+    ${random_name}=    Generate Random Strings
+    Fill Text    ${INPUT_NOME}    ${random_name}
+    ${random_email}=    Generate Random Email
+    Fill Text    ${INPUT_EMAIL}    ${random_email}
+    ${random_password}=    Generate Random Strings
+    Fill Secret    ${INPUT_PASSWORD}    $random_password

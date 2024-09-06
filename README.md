@@ -15,13 +15,13 @@ Lembre-se de estar na pasta do projeto para continuar os passos abaixo
 Executar todos os testes definindo o path da pasta
 
 ```
-robot test/ui-test/
+robot tests/ui-test/
 ```
 
 Execução de testes por tags e paralelo informado -i "flag" -i "flag2" (pode ter mais de um -i "flag")
 
 ```
-robot -i login -i slow  test/ui-test/test.robot
+robot -i login -i slow  tests/ui-test/register_ui.robot
 ```
 
 ## Salvar log em outra pasta (opcional) (por padrão é results)
@@ -29,7 +29,7 @@ robot -i login -i slow  test/ui-test/test.robot
 Especificar com -d "pasta"
 
 ```
-robot -d logs test/ui-test/test.robot
+robot -d results tests/ui-test/register_ui.robot
 ```
 
 ## Extras (opcional)

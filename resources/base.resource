@@ -7,3 +7,5 @@ Resource            hooks/_index.resource
 Resource            variables/_index.resource
 # Utils
 Resource            utils/_index.resource
+# Page Resource
+Resource            pages/_index.resource
