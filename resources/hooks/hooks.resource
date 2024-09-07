@@ -1,21 +1,16 @@
 *** Settings ***
 Library     RPA.Browser.Playwright
-
-
-*** Variables ***
-${BASE_URL}         https://front.serverest.dev
-${BROWSER}          chromium
-${IS_HEADLESS}      False
-
-${API_URL}          https://serverest.dev
-&{HEADERS}          Content-Type=application/json
+Resource    ../utils/utils.robot
 
 
 *** Keywords ***
 Start Browser
-    New Browser    browser=${BROWSER}    headless=${IS_HEADLESS}
+    ${browser}=    Get Base JSON    browser
+    ${is_headless}=    Get Base JSON    is_headless
+    New Browser    browser=${browser}    headless=${is_headless}
     New Context    locale=pt-BR
-    New Page    ${BASE_URL}
+    ${base_url}=    Get Base URL
+    New Page    ${base_url}
 
 Finish Browser
     Capture Screenshot
@@ -24,4 +19,10 @@ Finish Browser
 
 Capture Screenshot
     # Take Screenshot    %{ROBOT_ARTIFACTS}${/}result.png    fullPage=true
-    Run Keyword If Test Failed    Take Screenshot    fullPage=true
+    Run Keyword If Test Failed    Take Screenshot
+
+Set LocalStorage
+    [Arguments]    ${key}    ${value}
+    LocalStorage Set Item
+    ...    ${key}
+    ...    ${value}

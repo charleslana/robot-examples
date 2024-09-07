@@ -1,0 +1,18 @@
+# ### Cadastrar usuário
+@baseUrl = https://serverest.dev
+@accessToken = a
+@nome = test
+@email = email@email.com
+@password = password
+@administrador = false
+
+POST {{baseUrl}}/usuarios
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+  "nome": "{{nome}}",
+  "email": "{{email}}",
+  "password": "{{password}}",
+  "administrador": "{{administrador}}"
+}

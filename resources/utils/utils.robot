@@ -1,7 +1,6 @@
 *** Settings ***
 Library     String
 Library     RPA.JSON
-Library     RPA.Browser.Playwright
 
 
 *** Keywords ***
@@ -36,13 +35,16 @@ Get JSON
 
     RETURN    ${json}
 
-Set LocalStorage
-    [Arguments]    ${key}    ${value}
-    LocalStorage Set Item
-    ...    ${key}
-    ...    ${value}
-
 Get Base URL
+    ${url}=    Get Base JSON    base_url
+    RETURN    ${url}
+
+Get Base JSON
+    [Arguments]    ${value}
     ${base}=    Get JSON    base
-    ${base_url}=    Set Variable    ${base}[base][base_url]
-    RETURN    ${base_url}
+    ${url}=    Set Variable    ${base}[base][${value}]
+    RETURN    ${url}
+
+Get Api URL
+    ${url}=    Get Base JSON    api_url
+    RETURN    ${url}

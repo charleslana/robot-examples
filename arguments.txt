@@ -5,4 +5,4 @@
 --consolemarkers on
 --loglevel TRACE:INFO
 --tagdoc *:See *README.md*
---tagstatcombine smokeANDregression
+--tagstatcombine smokeANDregressionAND

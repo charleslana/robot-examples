@@ -20,6 +20,9 @@ O usuário preenche o formulário de cadastro
     Click    ${REGISTER_BUTTON}
 
 O usuário deve visualizar a mensagem de cadastro com sucesso
-    Wait For Elements State    ${ALERT_MESSAGE}
-    ${alert_text}=    Get Text    ${ALERT_MESSAGE}
-    Should Contain    ${alert_text}    Cadastro realizado com sucesso
+    Visualizar alerta    Cadastro realizado com sucesso
+
+Cadastrar usuário comum
+    O usuário clica em Cadastre-se
+    O usuário preenche o formulário de cadastro
+    O usuário deve visualizar a mensagem de cadastro com sucesso

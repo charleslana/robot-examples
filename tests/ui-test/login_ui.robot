@@ -18,7 +18,8 @@ Cenário: 01 - Fazer login como usuário comum
 
 Cenário: 02 - Fazer login automático
     [Documentation]    teste para logar com usuário automaticamente
-    [Tags]    user_login_auto
+    [Tags]    user_login_auto    smoke
+    Skip
 
     ${user}    Get JSON    user
     Given O usuário preenche o formulário de login com email e senha    ${user}[user][email]    ${user}[user][password]
@@ -26,7 +27,7 @@ Cenário: 02 - Fazer login automático
 
 Cenário: 03 - Fazer login com bearer token em local storage
     [Documentation]    teste para logar com usuário usando o bearer token
-    [Tags]    user_login_token
+    [Tags]    user_login_token    smoke    regression
 
     ${user}    Get JSON    user
     ${key}    Set Variable    ${user}[token][key]

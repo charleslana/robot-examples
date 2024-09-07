@@ -30,6 +30,19 @@ Execução de testes em ordem de arquivos
 robot -d results tests/ui-test/register_ui.robot tests/ui-test/login_ui.robot
 ```
 
+## Parâmetros de Configuração em JSON no path json/\*.json
+
+```
+{
+  "base": {
+    "browser": "chromium",//chromium or firefox
+    "is_headless": false,
+    "base_url": "https://front.serverest.dev",
+    "api_url": "https://serverest.dev"
+  }
+}
+```
+
 ## Salvar log em outra pasta (opcional) (por padrão é results)
 
 Especificar com -d "pasta"

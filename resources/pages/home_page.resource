@@ -8,3 +8,7 @@ Resource            ../base.resource
 O usuário navegue para a página home
     # Go To    ${HOME_URL}
     Go home
+
+Go home
+    ${url}=    Get Base URL
+    Go To    ${url}${HOME_URL}
