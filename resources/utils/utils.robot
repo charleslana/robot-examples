@@ -1,5 +1,7 @@
 *** Settings ***
 Library     String
+Library     RPA.JSON
+Library     RPA.Browser.Playwright
 
 
 *** Keywords ***
@@ -24,3 +26,23 @@ Generate Random Email
 Console Log
     [Arguments]    ${log}
     Log To Console    ${log}
+
+Get JSON
+    [Arguments]    ${json_path}
+
+    ${json}=    Load JSON from file
+    ...    ${EXECDIR}/resources/json/${json_path}.json
+    ...    encoding=UTF-8
+
+    RETURN    ${json}
+
+Set LocalStorage
+    [Arguments]    ${key}    ${value}
+    LocalStorage Set Item
+    ...    ${key}
+    ...    ${value}
+
+Get Base URL
+    ${base}=    Get JSON    base
+    ${base_url}=    Set Variable    ${base}[base][base_url]
+    RETURN    ${base_url}

@@ -1,0 +1,10 @@
+{
+  "user": {
+    "email": "a@a.com",
+    "password": "aaaaaa"
+  },
+  "token": {
+    "key": "serverest/userToken",
+    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYS5jb20iLCJwYXNzd29yZCI6ImFhYWFhYSIsImlhdCI6MTcyNTY2Mjc5NCwiZXhwIjoxNzI1NjYzMzk0fQ.YXVQsbpWZKMJkN-ipFG_iOSQmCBBc3OnL9k4Jgr0WsE"
+  }
+}

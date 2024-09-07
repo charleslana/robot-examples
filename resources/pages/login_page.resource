@@ -12,3 +12,9 @@ O usuário preenche o formulário de login
 
 O usuário deve visualizar o botão de logout
     Wait For Elements State    ${LOGOUT_BUTTON}
+
+O usuário preenche o formulário de login com email e senha
+    [Arguments]    ${email}    ${senha}
+    Fill Text    ${INPUT_EMAIL}    ${email}
+    Fill Secret    ${INPUT_PASSWORD}    $senha
+    Click    ${LOGIN_BUTTON}    

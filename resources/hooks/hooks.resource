@@ -3,7 +3,7 @@ Library     RPA.Browser.Playwright
 
 
 *** Variables ***
-${BASE_URL}         https://front.serverest.dev/login
+${BASE_URL}         https://front.serverest.dev
 ${BROWSER}          chromium
 ${IS_HEADLESS}      False
 

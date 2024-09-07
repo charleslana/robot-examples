@@ -15,3 +15,22 @@ Cenário: 01 - Fazer login como usuário comum
     Given O usuário preenche o formulário de login
     Then O usuário deve visualizar o botão de logout
     Sleep    5s
+
+Cenário: 02 - Fazer login automático
+    [Documentation]    teste para logar com usuário automaticamente
+    [Tags]    user_login_auto
+
+    ${user}    Get JSON    user
+    Given O usuário preenche o formulário de login com email e senha    ${user}[user][email]    ${user}[user][password]
+    Then O usuário deve visualizar o botão de logout
+
+Cenário: 03 - Fazer login com bearer token em local storage
+    [Documentation]    teste para logar com usuário usando o bearer token
+    [Tags]    user_login_token
+
+    ${user}    Get JSON    user
+    ${key}    Set Variable    ${user}[token][key]
+    ${value}    Set Variable    ${user}[token][value]
+    Set LocalStorage    ${key}    ${value}
+    Given O usuário navegue para a página home
+    Then O usuário deve visualizar o botão de logout
