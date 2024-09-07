@@ -3,11 +3,14 @@ Library     RPA.Browser.Playwright
 Resource    ../utils/utils.resource
 
 
+*** Variables ***
+${BROWSER}          chromium
+${IS_HEADLESS}      False
+
+
 *** Keywords ***
 Start Browser
-    ${browser}=    Get Base JSON    browser
-    ${is_headless}=    Get Base JSON    is_headless
-    New Browser    browser=${browser}    headless=${is_headless}
+    New Browser    browser=${BROWSER}    headless=${IS_HEADLESS}
     New Context    locale=pt-BR
     ${base_url}=    Get Base URL
     New Page    ${base_url}

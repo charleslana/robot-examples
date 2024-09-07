@@ -1,6 +1,6 @@
 # Robot-Examples
 
-Lembre-se de estar na pasta do projeto para continuar os passos abaixo
+Lembre-se de estar na pasta raiz do projeto para continuar os passos abaixo
 
 [1 passo: instalar o python no linux](docs/Install-python.md)
 
@@ -30,17 +30,10 @@ Execução de testes em ordem de arquivos
 robot -d results tests/ui-test/register_ui.robot tests/ui-test/login_ui.robot
 ```
 
-## Parâmetros de Configuração em JSON no path json/\*.json
+## Executar testes alterando parâmetros de variáveis
 
 ```
-{
-  "base": {
-    "browser": "chromium",//chromium or firefox
-    "is_headless": false,
-    "base_url": "https://front.serverest.dev",
-    "api_url": "https://serverest.dev"
-  }
-}
+robot -d ./results -v BROWSER:chromium -v IS_HEADLESS:True tests
 ```
 
 ## Salvar log em outra pasta (opcional) (por padrão é results)
@@ -92,3 +85,7 @@ Record Selector
 ### O que é TDD
 
 [Leia sobre o assunto aqui](docs/tdd.md)
+
+### O que é CI/CD
+
+[Leia sobre o assunto aqui](docs/ci-cd.md)

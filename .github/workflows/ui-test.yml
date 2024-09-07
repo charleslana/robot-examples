@@ -52,3 +52,18 @@ jobs:
         with:
           name: Test Report for Tag ${{ github.event.inputs.tag }}
           path: logs
+
+      - name: Prepare artifacts for GitHub Pages
+        run: |
+          mkdir public
+          cp -r logs/* public/
+          mv public/report.html public/index.html
+
+      - name: Deploy to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          force_orphan: true
