@@ -36,7 +36,7 @@ jobs:
       - name: Browser Init
         run: rfbrowser init
 
-      - name: Run Specific Tag E2E Tests
+      - name: Run Specific Tag UI Tests
         run: |
           robot -d ./logs -v BROWSER:chromium -v IS_HEADLESS:True --include ${{ github.event.inputs.tag }} tests/ui-test
 
