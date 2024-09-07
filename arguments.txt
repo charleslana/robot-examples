@@ -1,8 +1,8 @@
-# --variable language:pt
+--variable language:pt
 --outputdir results
 # --timestampoutput
-# --console verbose
-# --consolemarkers on
-# --loglevel TRACE:INFO
-# --tagdoc *:See *README.md*
-# --tagstatcombine smokeANDregressionAND
+--console verbose
+--consolemarkers on
+--loglevel TRACE:INFO
+--tagdoc *:See *README.md*
+--tagstatcombine smokeANDregressionAND
