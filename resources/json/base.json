@@ -1,7 +1,7 @@
 {
   "base": {
     "browser": "chromium",
-    "is_headless": true,
+    "is_headless": false,
     "base_url": "https://front.serverest.dev",
     "api_url": "https://serverest.dev"
   }
