@@ -1,6 +1,6 @@
 *** Settings ***
 Library     RPA.Browser.Playwright
-Resource    ../utils/utils.robot
+Resource    ../utils/utils.resource
 
 
 *** Keywords ***

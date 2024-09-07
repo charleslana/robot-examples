@@ -4,7 +4,7 @@ Documentation       Suite de testes de usuário
 Library             RequestsLibrary
 Library             Collections
 Library             String
-Resource            ../../resources/utils/utils.robot
+Resource            ../../resources/utils/utils.resource
 
 Suite Setup         Obter url base
 

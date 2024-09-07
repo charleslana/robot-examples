@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation       Testes paralelos
 
-Resource            resources/base.resource
+Resource            ../resources/base.resource
 
 
 *** Test Cases ***

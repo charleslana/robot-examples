@@ -1,26 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20240907 13:43:14.773" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20240907 15:29:45.117" rpa="false" schemaversion="4">
 <suite id="s1" name="Robot Interactive Console" source="/home/charles/.vscode/extensions/robocorp.robotframework-lsp-1.12.0/src/robotframework_ls/vendored/robotframework_interactive/robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test" line="5">
 <kw name="Interpreter Main Loop" library="MainLoop">
-<kw name="Console Log">
-<arg>${response_json}</arg>
-<msg timestamp="20240907 13:43:15.170" level="FAIL">No keyword with name 'Console Log' found.</msg>
-<status status="FAIL" starttime="20240907 13:43:15.170" endtime="20240907 13:43:15.170"/>
+<kw name="Generate Random Email" library="utils">
+<kw name="Set Variable" library="BuiltIn">
+<var>${length}</var>
+<arg>10</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240907 15:29:47.531" level="INFO">${length} = 10</msg>
+<status status="PASS" starttime="20240907 15:29:47.530" endtime="20240907 15:29:47.531"/>
 </kw>
-<kw name="Console Log">
-<arg>${GLOBAL_USER_EMAIL}</arg>
-<status status="NOT RUN" starttime="20240907 13:43:15.171" endtime="20240907 13:43:15.171"/>
+<kw name="Generate Random Strings" library="utils">
+<var>${random_email}</var>
+<arg>${length}</arg>
+<kw name="Generate Random String" library="String">
+<var>${random_string}</var>
+<arg>${length}</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20240907 15:29:47.532" level="INFO">${random_string} = 9WfdehGQw3</msg>
+<status status="PASS" starttime="20240907 15:29:47.532" endtime="20240907 15:29:47.532"/>
 </kw>
-<kw name="Console Log">
-<arg>${token}</arg>
-<status status="NOT RUN" starttime="20240907 13:43:15.172" endtime="20240907 13:43:15.172"/>
+<return>
+<value>${random_string}</value>
+<status status="PASS" starttime="20240907 15:29:47.532" endtime="20240907 15:29:47.532"/>
+</return>
+<msg timestamp="20240907 15:29:47.532" level="INFO">${random_email} = 9WfdehGQw3</msg>
+<status status="PASS" starttime="20240907 15:29:47.531" endtime="20240907 15:29:47.532"/>
 </kw>
-<status status="PASS" starttime="20240907 13:43:14.789" endtime="20240907 13:43:16.590"/>
+<kw name="Set Variable" library="BuiltIn">
+<var>${complete_email}</var>
+<arg>${random_email}@email.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240907 15:29:47.533" level="INFO">${complete_email} = 9WfdehGQw3@email.com</msg>
+<status status="PASS" starttime="20240907 15:29:47.532" endtime="20240907 15:29:47.533"/>
 </kw>
-<status status="PASS" starttime="20240907 13:43:14.788" endtime="20240907 13:43:16.590"/>
+<kw name="Log" library="BuiltIn">
+<arg>${complete_email}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" starttime="20240907 15:29:47.533" endtime="20240907 15:29:47.533"/>
+</kw>
+<kw name="Console Log" library="utils">
+<arg>${complete_email}</arg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${log}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240907 15:29:47.533" endtime="20240907 15:29:47.534"/>
+</kw>
+<status status="PASS" starttime="20240907 15:29:47.533" endtime="20240907 15:29:47.534"/>
+</kw>
+<return>
+<value>${complete_email}</value>
+<status status="PASS" starttime="20240907 15:29:47.534" endtime="20240907 15:29:47.534"/>
+</return>
+<status status="PASS" starttime="20240907 15:29:47.530" endtime="20240907 15:29:47.534"/>
+</kw>
+<status status="PASS" starttime="20240907 15:29:45.134" endtime="20240907 15:29:49.192"/>
+</kw>
+<status status="PASS" starttime="20240907 15:29:45.134" endtime="20240907 15:29:49.193"/>
 </test>
-<status status="PASS" starttime="20240907 13:43:14.773" endtime="20240907 13:43:16.591"/>
+<status status="PASS" starttime="20240907 15:29:45.118" endtime="20240907 15:29:49.627"/>
 </suite>
 <statistics>
 <total>
