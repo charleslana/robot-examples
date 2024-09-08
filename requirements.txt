@@ -3,4 +3,4 @@ robotframework-browser==17.5.2
 robotframework-requests==0.9.7
 robotframework-appiumlibrary==2.1.0
 pyyaml==6.0.1
-robotframework==7.0.1
+robotframework==6.1.1
