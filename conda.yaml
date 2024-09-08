@@ -11,12 +11,12 @@ dependencies:
   - robocorp-truststore=0.8.0 # https://pypi.org/project/robocorp-truststore/
   - nodejs=16.20.2 # https://github.com/nodejs/node/blob/main/CHANGELOG.md
   - pip:
-      - robotframework==6.1.1
       - robotframework-browser==17.5.2 # https://github.com/MarketSquare/robotframework-browser/releases
       - rpaframework==27.7.0 # https://rpaframework.org/releasenotes.html
       - robotframework-requests==0.9.7
       - robotframework-appiumlibrary==2.1.0
       - pyyaml==6.0.1
+      - robotframework==6.1.1
 
 rccPostInstall:
   - rfbrowser init # Initialize Playwright
