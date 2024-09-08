@@ -16,10 +16,10 @@ Run
 robot -d results --loglevel TRACE tests/mobile-test/app_register.robot
 ```
 
-Skip test
+Skip mobile tag test
 
 ```
-robot -d results --loglevel TRACE --skip mobile  tests/mobile-test
+robot -d results --loglevel TRACE --skip mobile  tests
 ```
 
 [Voltar para o README principal](../README.md)
