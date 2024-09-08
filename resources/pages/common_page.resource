@@ -8,5 +8,5 @@ Resource            ../base.resource
 Visualizar alerta
     [Arguments]    ${message}
     Wait For Elements State    ${ALERT_MESSAGE}
-    ${alert_text}=    Get Text    ${ALERT_MESSAGE}
+    ${alert_text}=    RPA.Browser.Playwright.Get Text    ${ALERT_MESSAGE}
     Should Contain    ${alert_text}    ${message}
