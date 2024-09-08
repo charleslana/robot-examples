@@ -1,0 +1,15 @@
+*** Settings ***
+Documentation       Suite de testes de login de usuário
+
+Resource            ../../resources/base.resource
+
+Test Setup          Start Browser
+Test Teardown       Finish Browser
+
+
+*** Test Cases ***
+Cenário: 01 - Clicar no menu lista de compras
+    Given Logar com bearer token
+    When O usuário navegue para a página home
+    And Navegar para a lista de compras
+    Then Esperar Lista de compras

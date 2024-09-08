@@ -15,6 +15,8 @@ dependencies:
       - rpaframework==27.7.0 # https://rpaframework.org/releasenotes.html
       - robotframework-requests==0.9.7
       - robotframework-appiumlibrary==2.1.0
+      - pyyaml==6.0.1
+      - robotframework==6.1.1
 
 rccPostInstall:
   - rfbrowser init # Initialize Playwright

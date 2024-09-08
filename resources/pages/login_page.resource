@@ -17,4 +17,10 @@ O usuário preenche o formulário de login com email e senha
     [Arguments]    ${email}    ${senha}
     Fill Text    ${INPUT_EMAIL}    ${email}
     Fill Secret    ${INPUT_PASSWORD}    $senha
-    Click    ${LOGIN_BUTTON}    
+    Click    ${LOGIN_BUTTON}
+
+Logar com bearer token
+    ${user}    Get JSON    user
+    ${key}    Set Variable    ${user}[token][key]
+    ${value}    Set Variable    ${user}[token][value]
+    Set LocalStorage    ${key}    ${value}

@@ -29,9 +29,6 @@ Cenário: 03 - Fazer login com bearer token em local storage
     [Documentation]    teste para logar com usuário usando o bearer token
     [Tags]    user_login_token    smoke    regression
 
-    ${user}    Get JSON    user
-    ${key}    Set Variable    ${user}[token][key]
-    ${value}    Set Variable    ${user}[token][value]
-    Set LocalStorage    ${key}    ${value}
-    Given O usuário navegue para a página home
+    Given Logar com bearer token
+    When O usuário navegue para a página home
     Then O usuário deve visualizar o botão de logout
