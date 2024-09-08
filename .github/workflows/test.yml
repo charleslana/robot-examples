@@ -39,7 +39,7 @@ jobs:
         run: robot -d ./logs -v BROWSER:chromium -v IS_HEADLESS:True --skip mobile --loglevel TRACE tests
 
       - name: Robot Report
-        uses: joonvena/robotframework-reporter-action@v2.5
+        uses: joonvena/robotframework-reporter-action@v2.4
         if: always()
 
         with:
