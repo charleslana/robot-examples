@@ -9,7 +9,7 @@ Test Teardown       Close App
 
 
 *** Test Cases ***
-Login user app
+Login user app (Mobile)
     [Tags]    mobile
 
     Given Abrir Funcionalidades App
@@ -18,7 +18,7 @@ Login user app
     And Preencher Formulário de Login
     Then Mensagem de login com sucesso
 
-Login failed user app
+Login failed user app (Mobile)
     [Tags]    mobile
 
     Given Abrir Funcionalidades App

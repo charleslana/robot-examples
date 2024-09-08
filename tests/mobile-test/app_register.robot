@@ -9,13 +9,13 @@ Test Teardown       Close App
 
 
 *** Test Cases ***
-Open Yodapp Application
+Open Yodapp Application (Mobile)
     [Tags]    mobile
 
     Given Abrir Funcionalidades App
     Then Sleep    3s
 
-Register new user
+Register new user (Mobile)
     [Tags]    mobile
 
     Given Abrir Funcionalidades App
