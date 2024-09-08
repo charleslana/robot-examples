@@ -17,7 +17,7 @@ sudo apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline
 ### b. Instale o `pyenv`:
 
 ```bash
-curl <https://pyenv.run> | bash
+curl https://pyenv.run | bash
 
 ```
 
@@ -30,6 +30,8 @@ echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 source ~/.bashrc
 
 ```
+
+Necessário reiniciar a IDE/Terminal para que reconheça o pyenv
 
 ### d. Instale a versão Python 3.10.12:
 

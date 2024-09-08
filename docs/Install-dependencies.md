@@ -6,10 +6,12 @@ Instalar versão de pip
 python -m pip install --upgrade pip==23.2.1
 ```
 
-Instalar o browser do robot-framework
+Instalar as dependências do projeto
 
 ```jsx
-pip install robotframework-browser
+pip install rpaframework==27.7.0
+pip install robotframework-browser==17.5.2
+pip install robotframework-requests==0.9.7
 ```
 
 Instalar os browsers
