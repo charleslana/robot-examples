@@ -10,6 +10,8 @@ Lembre-se de estar na pasta raiz do projeto para continuar os passos abaixo
 
 [4 passo: Configuração de IDE](docs/Settins-ide.md)
 
+[Appium](docs/appium.md) (Opcional)
+
 ## Executar testes
 
 Executar todos os testes definindo o path da pasta

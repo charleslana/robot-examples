@@ -38,7 +38,7 @@ jobs:
 
       - name: Run Specific Tag UI Tests
         run: |
-          robot -d ./logs -v BROWSER:chromium -v IS_HEADLESS:True --include ${{ github.event.inputs.tag }} tests/ui-test
+          robot -d ./logs -v BROWSER:chromium -v IS_HEADLESS:True --skip mobile --include ${{ github.event.inputs.tag }} tests/ui-test
 
       - name: Robot Report
         uses: joonvena/robotframework-reporter-action@v2.5

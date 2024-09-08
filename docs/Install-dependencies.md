@@ -9,9 +9,7 @@ python -m pip install --upgrade pip==23.2.1
 Instalar as dependências do projeto
 
 ```jsx
-pip install rpaframework==27.7.0
-pip install robotframework-browser==17.5.2
-pip install robotframework-requests==0.9.7
+pip install -r requirements.txt
 ```
 
 Instalar os browsers

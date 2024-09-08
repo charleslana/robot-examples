@@ -17,7 +17,7 @@ O usuário preenche o formulário de cadastro
     ${random_password}=    Generate Random Strings
     Set Global Variable    ${GLOBAL_USER_PASSWORD}    ${random_password}
     Fill Secret    ${INPUT_PASSWORD}    $random_password
-    Click    ${REGISTER_BUTTON}
+    Click    ${APP_SUBMIT_BUTTON}
 
 O usuário deve visualizar a mensagem de cadastro com sucesso
     Visualizar alerta    Cadastro realizado com sucesso

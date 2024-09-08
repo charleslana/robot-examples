@@ -1,3 +1,4 @@
 rpaframework==27.7.0
 robotframework-browser==17.5.2
 robotframework-requests==0.9.7
+robotframework-appiumlibrary==2.1.0
