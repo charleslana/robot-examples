@@ -29,8 +29,11 @@ Console Log
 Get JSON
     [Arguments]    ${json_path}
 
+    ${dir}=    Set Variable    ${CURDIR}/../json/${json_path}.json
+    ${resolved_dir}=    Evaluate    os.path.abspath('${dir}')    os
+
     ${json}=    Load JSON from file
-    ...    ${EXECDIR}/resources/json/${json_path}.json
+    ...    ${resolved_dir}
     ...    encoding=UTF-8
 
     RETURN    ${json}
