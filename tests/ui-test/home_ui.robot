@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Suite de testes de login de usuário
+Documentation       Suite de testes da home
 
 Resource            ../../resources/base.resource
 
