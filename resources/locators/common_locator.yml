@@ -1,0 +1,2 @@
+common:
+  alert_message: xpath=//div[contains(@class, 'alert')]

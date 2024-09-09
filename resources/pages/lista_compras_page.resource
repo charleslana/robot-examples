@@ -6,4 +6,4 @@ Resource            ../base.resource
 
 *** Keywords ***
 Esperar Lista de compras
-    Wait For Elements State    ${lista_compras.titulo}
+    Wait For Element    ${lista_compras.titulo}

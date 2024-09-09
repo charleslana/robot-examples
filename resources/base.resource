@@ -11,3 +11,5 @@ Variables           locators/lista_compras_locator.yml
 Resource            utils/_index.resource
 # Page Resource
 Resource            pages/_index.resource
+# Playwright Resource
+Resource            playwright.resource

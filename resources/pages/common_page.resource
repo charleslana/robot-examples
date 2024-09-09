@@ -1,12 +1,13 @@
 *** Settings ***
-Documentation       Arquivo de keywords de componentes comuns
+Documentation       Arquivo de keywords de comuns
 
-Resource            ../base.resource
+Resource            ../playwright.resource
+Variables           ../locators/common_locator.yml
 
 
 *** Keywords ***
 Visualizar alerta
     [Arguments]    ${message}
-    Wait For Elements State    ${ALERT_MESSAGE}
-    ${alert_text}=    RPA.Browser.Playwright.Get Text    ${ALERT_MESSAGE}
+    Wait For Element    ${common.alert_message}
+    ${alert_text}=    RPA.Browser.Playwright.Get Text    ${common.alert_message}
     Should Contain    ${alert_text}    ${message}
