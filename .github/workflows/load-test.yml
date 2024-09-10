@@ -21,6 +21,10 @@ jobs:
           sudo apt-get update
           sudo apt-get install k6
 
+      - name: Prepare Results Directory
+        run: |
+          mkdir -p results
+
       - name: Run Load Test
         run: |
           k6 run tests/load-test/get-user-env.js --env STAGES_SET='[{"duration":"5s","target":10},{"duration":"10s","target":10},{"duration":"5s","target":0}]'
