@@ -28,7 +28,7 @@ jobs:
       - name: Prepare and Upload Report
         run: |
           mkdir -p public
-          cp summary.html public/
+          cp results/summary.html public/
 
       - name: Upload Report
         uses: actions/upload-artifact@v4.3.5
