@@ -29,13 +29,16 @@ jobs:
         run: |
           k6 run tests/load-test/get-user-env.js --env STAGES_SET='[{"duration":"5s","target":10},{"duration":"10s","target":10},{"duration":"5s","target":0}]'
 
-      - name: Prepare and Upload Report
+      - name: Prepare Artifacts for GitHub Pages
         run: |
           mkdir -p public
           cp results/summary.html public/
 
-      - name: Upload Report
-        uses: actions/upload-artifact@v4.3.5
+      - name: Deploy to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          name: Load Test Report
-          path: public/summary.html
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          force_orphan: true
