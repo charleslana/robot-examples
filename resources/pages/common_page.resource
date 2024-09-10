@@ -11,3 +11,6 @@ Visualizar alerta
     Wait For Element    ${common.alert_message}
     ${alert_text}=    RPA.Browser.Playwright.Get Text    ${common.alert_message}
     Should Contain    ${alert_text}    ${message}
+
+Navegar para a lista de compras
+    Clicar    ${common_lista_compras_action}
