@@ -12,6 +12,8 @@ Lembre-se de estar na pasta raiz do projeto para continuar os passos abaixo
 
 [Appium](docs/appium.md) (Opcional)
 
+[K6](docs/k6.md) (Opcional)
+
 ## Executar testes
 
 Executar todos os testes definindo o path da pasta

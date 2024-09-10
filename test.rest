@@ -16,3 +16,7 @@ Authorization: Bearer {{accessToken}}
   "password": "{{password}}",
   "administrador": "{{administrador}}"
 }
+
+### Listar usuários
+
+Get {{baseUrl}}/usuarios
