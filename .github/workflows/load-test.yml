@@ -31,7 +31,7 @@ jobs:
 
       - name: Prepare and Upload Report
         run: |
-          mkdir -p public/results
+          mkdir -p public
           cp results/summary.html public/
 
       - name: Upload Report
