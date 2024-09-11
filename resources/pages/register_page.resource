@@ -20,7 +20,7 @@ O usuário preenche o formulário de cadastro
     Preencher texto    ${common_input_email}    ${random_email}
     ${random_password}=    Generate Random Strings
     Set Global Variable    ${GLOBAL_USER_PASSWORD}    ${random_password}
-    Preencher secretamente    ${common_input_password}    $random_password
+    Preencher secretamente    ${common_input_password}    ${random_password}
     Clicar    ${common_register_button}
 
 O usuário deve visualizar a mensagem de cadastro com sucesso

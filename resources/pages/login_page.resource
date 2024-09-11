@@ -12,7 +12,7 @@ Variables           ../locators/common_locator.yml
 O usuário preenche o formulário de login
     Navegar para funcionalidade    ${login_url}
     Preencher texto    ${common_input_email}    ${GLOBAL_USER_EMAIL}
-    Preencher secretamente    ${common_input_password}    $GLOBAL_USER_PASSWORD
+    Preencher secretamente    ${common_input_password}    ${GLOBAL_USER_PASSWORD}
     Clicar    ${login_button}
 
 O usuário deve visualizar o botão de logout
@@ -21,7 +21,7 @@ O usuário deve visualizar o botão de logout
 O usuário preenche o formulário de login com email e senha
     [Arguments]    ${email}    ${senha}
     Preencher texto    ${common_input_email}    ${email}
-    Preencher secretamente    ${common_input_password}    $senha
+    Preencher secretamente    ${common_input_password}    ${senha}
     Clicar    ${login_button}
 
 Logar com bearer token

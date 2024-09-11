@@ -2,6 +2,7 @@
 Documentation       Arquivo de keywords do playwright
 
 Library             RPA.Browser.Playwright
+Resource            utils/utils.resource
 
 
 *** Keywords ***
@@ -28,4 +29,6 @@ Preencher texto
 Preencher secretamente
     [Arguments]    ${locator}    ${text}
 
-    Fill Secret    ${locator}    ${text}
+    Console Log    ${text}
+
+    Fill Secret    ${locator}    $text
