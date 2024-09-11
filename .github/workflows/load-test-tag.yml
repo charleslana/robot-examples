@@ -1,0 +1,53 @@
+name: Load Test with Tag
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag for the tests to run"
+        required: true
+        type: string
+
+jobs:
+  load-test:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v4
+
+      - name: Install k6
+        run: |
+          sudo gpg -k
+          sudo gpg --no-default-keyring --keyring /usr/share/keyrings/k6-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C5AD17C747E3415A3642D57D77C6C491D6AC1D69
+          echo "deb [signed-by=/usr/share/keyrings/k6-archive-keyring.gpg] https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+          sudo apt-get update
+          sudo apt-get install k6
+
+      # - name: Prepare Results Directory
+      #   run: |
+      #     mkdir -p results
+
+      - name: Run Load Test
+        run: |
+          k6 run ${{ github.event.inputs.tag }}
+
+      # - name: Prepare Artifacts for GitHub Pages
+      #   run: |
+      #     mkdir -p public
+      #     if [ -f results/summary.html ]; then
+      #       cp results/summary.html public/
+      #     else
+      #       echo "summary.html not found, skipping copy."
+      #     fi
+
+      # - name: Deploy to GitHub Pages
+      #   if: always()
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./public
+      #     publish_branch: gh-pages
+      #     force_orphan: true
