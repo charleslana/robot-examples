@@ -1,24 +1,27 @@
 *** Settings ***
 Documentation       Arquivo de keywords da tela de criação de conta
 
-Resource            ../base.resource
 Resource            ../playwright.resource
+Resource            ../utils/utils.resource
+Resource            common_page.resource
+Variables           ../locators/common_locator.yml
+Variables           ../locators/register_locator.yml
 
 
 *** Keywords ***
 O usuário clica em Cadastre-se
-    Clicar    ${REGISTER_ACTION}
+    Clicar    ${common_register_button}
 
 O usuário preenche o formulário de cadastro
     ${random_name}=    Generate Random Strings
-    Fill Text    ${INPUT_NOME}    ${random_name}
+    Preencher texto    ${input_nome}    ${random_name}
     ${random_email}=    Generate Random Email
     Set Global Variable    ${GLOBAL_USER_EMAIL}    ${random_email}
-    Fill Text    ${INPUT_EMAIL}    ${random_email}
+    Preencher texto    ${common_input_email}    ${random_email}
     ${random_password}=    Generate Random Strings
     Set Global Variable    ${GLOBAL_USER_PASSWORD}    ${random_password}
-    Fill Secret    ${INPUT_PASSWORD}    $random_password
-    Clicar    ${REGISTER_BUTTON}
+    Fill Secret    ${common_input_password}    $random_password
+    Clicar    ${common_register_button}
 
 O usuário deve visualizar a mensagem de cadastro com sucesso
     Visualizar alerta    Cadastro realizado com sucesso

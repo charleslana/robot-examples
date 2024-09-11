@@ -1,6 +1,5 @@
-common:
-  alert_message: xpath=//div[contains(@class, 'alert')]
-
+common_alert_message: xpath=//div[contains(@class, 'alert')]
 common_lista_compras_action: css=[data-testid="lista-de-compras"]
-input_email: id=email
-input_password: id=password
+common_input_email: id=email
+common_input_password: id=password
+common_register_button: css=[data-testid="cadastrar"]

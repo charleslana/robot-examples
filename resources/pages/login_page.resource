@@ -11,17 +11,17 @@ Variables           ../locators/common_locator.yml
 *** Keywords ***
 O usuário preenche o formulário de login
     Navegar para funcionalidade    ${login_url}
-    Preencher texto    ${input_email}    ${GLOBAL_USER_EMAIL}
-    Preencher secretamente    ${input_password}    $GLOBAL_USER_PASSWORD
+    Preencher texto    ${common_input_email}    ${GLOBAL_USER_EMAIL}
+    Preencher secretamente    ${common_input_password}    $GLOBAL_USER_PASSWORD
     Clicar    ${login_button}
 
 O usuário deve visualizar o botão de logout
-    Wait For Elements State    ${logout_button}
+    Wait For Element    ${logout_button}
 
 O usuário preenche o formulário de login com email e senha
     [Arguments]    ${email}    ${senha}
-    Preencher texto    ${input_email}    ${email}
-    Preencher secretamente    ${input_password}    $senha
+    Preencher texto    ${common_input_email}    ${email}
+    Preencher secretamente    ${common_input_password}    $senha
     Clicar    ${login_button}
 
 Logar com bearer token
