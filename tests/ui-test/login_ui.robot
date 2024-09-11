@@ -12,7 +12,8 @@ Cenário: 01 - Fazer login como usuário comum
     [Documentation]    teste para logar usuário perfil comum
     [Tags]    user_login
 
-    Given O usuário preenche o formulário de login
+    Given Cadastrar usuário comum
+    When O usuário preenche o formulário de login
     Then O usuário deve visualizar o botão de logout
     Sleep    5s
 

@@ -36,7 +36,7 @@ export default function () {
   const baseUrl =
     "https://dev.telebras.com.br/scc-backend/api/circuito-service/contratar-acesso";
   const payload = JSON.stringify({
-    designacaoTelebras: "MGRSIA00099",
+    designacaoTelebras: "MGRSIA00101",
     localidade: "Arena MRV",
     endereco: "Rua Cristina Maria de Assis, 204 - Califórnia",
     cep: "30855-440",
@@ -72,6 +72,25 @@ export default function () {
   console.log(response.body);
   check(response, {
     "status should be 201": (res) => res.status === 201,
+  });
+  check(response, {
+    "NOT 500": (r) => r.status !== 500,
+  });
+
+  check(response, {
+    "NOT 429": (r) => r.status !== 429,
+  });
+
+  check(response, {
+    "NOT 502": (r) => r.status !== 502,
+  });
+
+  check(response, {
+    "NOT 504": (r) => r.status !== 504,
+  });
+
+  check(response, {
+    "NOT 408": (r) => r.status !== 408,
   });
   sleep(1);
 }

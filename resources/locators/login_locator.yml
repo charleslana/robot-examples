@@ -1,0 +1,3 @@
+login_url: /login
+login_button: css=[data-testid="entrar"]
+logout_button: css=[data-testid="logout"]

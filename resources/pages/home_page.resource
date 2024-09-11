@@ -1,14 +1,10 @@
 *** Settings ***
 Documentation       Arquivo de keywords da tela de home
 
-Resource            ../base.resource
+Resource            common_page.resource
+Variables           ../locators/home_locator.yml
 
 
 *** Keywords ***
 O usuário navegue para a página home
-    # Go To    ${HOME_URL}
-    Go home
-
-Go home
-    ${url}=    Get Base URL
-    Go To    ${url}${HOME_URL}
+    Navegar para funcionalidade    ${home_url}

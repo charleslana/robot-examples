@@ -2,6 +2,7 @@
 Documentation       Arquivo de keywords de comuns
 
 Resource            ../playwright.resource
+Resource            ../utils/utils.resource
 Variables           ../locators/common_locator.yml
 
 
@@ -14,3 +15,9 @@ Visualizar alerta
 
 Navegar para a lista de compras
     Clicar    ${common_lista_compras_action}
+
+Navegar para funcionalidade
+    [Arguments]    ${url}
+
+    ${base_url}=    Get Base URL
+    Navegar para    ${base_url}${url}
