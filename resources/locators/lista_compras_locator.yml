@@ -1,2 +1,1 @@
-lista_compras:
-  titulo: css=h1 >> text="Lista de Compras"
+lista_compras_titulo: css=h1 >> text="Lista de Compras"

@@ -1,8 +1,6 @@
 *** Settings ***
 Documentation       Arquivo de keywords da tela de login de conta
 
-# Resource    ../base.resource
-Resource            ../playwright.resource
 Resource            common_page.resource
 Resource            register_page.resource
 Resource            ../hooks/hooks.resource
