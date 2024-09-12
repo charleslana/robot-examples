@@ -26,8 +26,11 @@ Mostra leitura de CSV
     Read CSV File
 
 Mostra dados do PDF
-    ${sample_date}=    Extract Sample Date From PDF
+    ${sample_date}=    Extract Sample String From PDF
     Log To Console    ${sample_date}
+
+Buscar dado contendo no PDF
+    Extract texto do PDF
 
 
 *** Keywords ***
@@ -80,7 +83,7 @@ Read CSV File
         Log To Console    ${csv_row}
     END
 
-Extract Sample Date From PDF
+Extract Sample String From PDF
     ${text}=    Get Text From PDF    sample/c4611_sample_explain.pdf
     # Log To Console    ${text}
     ${lines}=    Get Lines Matching Regexp
@@ -102,3 +105,9 @@ Strip String
     [Arguments]    ${text}
     ${stripped}=    Evaluate    "${text}".strip()
     RETURN    ${stripped}
+
+Extract texto do PDF
+    ${dict}=    Get Text From PDF    sample/c4611_sample_explain.pdf
+    Log To Console    ${dict}
+    ${text}=    Convert To String    ${dict}
+    Should Contain    ${text}    To run this sample
