@@ -10,7 +10,7 @@ Test Teardown       Close App
 
 *** Test Cases ***
 Open Yodapp Application (Mobile)
-    [Tags]    mobile
+    [Tags]    mobile    open
 
     Given Abrir Funcionalidades App
     Then Sleep    3s

@@ -1,0 +1,14 @@
+qax_title1: id=com.qaxperience.yodapp:id/mi_title
+qax_title2: //android.widget.TextView[contains(@resource-id, "mi_title")]
+qax_title3: //android.widget.TextView[@resource-id="com.qaxperience.yodapp:id/mi_title"]
+qax_title4: //android.widget.TextView[@resource-id="com.qaxperience.yodapp:id/mi_title" and @text="Yodapp"]
+qax_button1: //android.widget.Button[@text="QAX"]
+qax_button2: //android.widget.Button[contains(@text, "QAX")]
+qax_button3: //android.widget.LinearLayout//android.widget.Button[@text="QAX"]
+app_menu_drawer_icon: //android.widget.ImageButton[@content-desc="Open navigation drawer"]
+app_menu_form: //android.widget.TextView[@resource-id="com.qaxperience.yodapp:id/tvItemTitle" and @text='%s']
+app_item_card: //android.widget.TextView[@resource-id="com.qaxperience.yodapp:id/tvItemTitle" and @text='%s']
+app_title_app: //android.widget.TextView[@resource-id="com.qaxperience.yodapp:id/toolbarTitle" and @text='%s']
+app_email_input: id=com.qaxperience.yodapp:id/etEmail
+app_password_input: id=com.qaxperience.yodapp:id/etPassword
+app_submit_button: id=com.qaxperience.yodapp:id/btnSubmit

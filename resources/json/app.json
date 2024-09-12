@@ -1,0 +1,12 @@
+{
+  "app": {
+    "remote_url": "http://localhost:4723/wd/hub",
+    "android_automation_name": "UIAutomator2",
+    "android_platform_name": "Android",
+    "android_platform_version": "11",
+    "android_device_name": "emulator-5554",
+    "android_apk": "yodapp-beta.apk",
+    "android_app_package": "com.qaxperience.yodapp",
+    "android_app_activity": "com.qaxperience.yodapp.components.base.SplashActivity"
+  }
+}

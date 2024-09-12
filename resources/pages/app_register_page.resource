@@ -1,34 +1,37 @@
 *** Settings ***
 Documentation       Arquivo de keywords da tela de criação de conta do app
 
-Resource            ../base.resource
+Resource            app_common_page.resource
+Variables           ../locators/app_register_locator.yml
 
 
 *** Variables ***
-${APP_LEVEL_SELECT}     id=com.qaxperience.yodapp:id/spinnerJob
-${APP_LEVEL_LIST}       class=android.widget.ListView
-${APP_NAME_INPUT}       id=com.qaxperience.yodapp:id/etUsername
 &{APP_USER_DETAILS}     email=email@email.com    password=123456
+${REGISTER_CARD}        Cadastro
+${REGISTER_TITLE}       Cadastro
+${NOME}                 Nome
+${NIVEL}                Padawan
+${TOOLTIP_MESSAGE}      Tudo certo, boas vindas ao Yodapp!
 
 
 *** Keywords ***
 Select Level
     [Arguments]    ${level}
 
-    Click Element    ${APP_LEVEL_SELECT}
-    Wait Until Element Is Visible    ${APP_LEVEL_LIST}
-    Click Text    ${level}
+    Clicar Elemento    ${app_level_select}
+    Esperar Elemento Vísivel    ${app_level_list}
+    Clicar Texto    ${level}
 
 Abrir Item Cadastro
-    Click Card Item    Cadastro    Cadastro
+    Click Card Item    ${REGISTER_CARD}    ${REGISTER_TITLE}
 
 Preencher Formulário de Cadastro
-    Wait Until Page Contains Element    ${APP_NAME_INPUT}
-    Input Text    ${APP_NAME_INPUT}    Nome
-    Input Text    ${APP_EMAIL_INPUT}    ${APP_USER_DETAILS}[email]
-    Input Text    ${APP_PASSWORD_INPUT}    ${APP_USER_DETAILS}[password]
-    Select Level    Padawan
-    Click Element    ${APP_SUBMIT_BUTTON}
+    Aguarde Até Elemento Conter    ${app_name_input}
+    Digitar Texto Elemento    ${app_name_input}    ${NOME}
+    Digitar Texto Elemento    ${app_email_input}    ${APP_USER_DETAILS}[email]
+    Digitar Texto Elemento    ${app_password_input}    ${APP_USER_DETAILS}[password]
+    Select Level    ${NIVEL}
+    Clicar Elemento    ${app_submit_button}
 
 Mensagem de cadastro com sucesso
-    Wait For Tooltip    Tudo certo, boas vindas ao Yodapp!
+    Wait For Tooltip    ${TOOLTIP_MESSAGE}

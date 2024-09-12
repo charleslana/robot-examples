@@ -1,0 +1,3 @@
+app_level_select: id=com.qaxperience.yodapp:id/spinnerJob
+app_level_list: class=android.widget.ListView
+app_name_input: id=com.qaxperience.yodapp:id/etUsername
