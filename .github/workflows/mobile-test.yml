@@ -33,9 +33,9 @@ jobs:
         uses: android-actions/setup-android@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version: 20
 
       - name: Install Appium
         run: |
@@ -62,8 +62,15 @@ jobs:
           target: google_apis
           arch: x86_64
           profile: pixel_3
-          script: |
-            robot -d ./reports -v APP_JSON:app_action tests/mobile-test
+        #   script: |
+        #     robot -d ./reports -v APP_JSON:app_action tests/mobile-test
+
+      - name: Install APK
+        run: adb install apk/yodapp-beta.apk
+
+      - name: Run Mobile Tests
+        run: |
+          robot -d ./reports -v APP_JSON:app_action tests/mobile-test
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
