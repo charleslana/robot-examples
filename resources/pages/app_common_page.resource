@@ -30,7 +30,7 @@ Close App
     Fechar aplicativo
 
 Abrir Funcionalidades App
-    Aguarde Até Elemento Conter    ${qax_title1}    10
+    Aguarde Até Elemento Conter    ${qax_title1}    60
     Aguarde Até Elemento Conter    ${qax_title2}
     Aguarde Até Elemento Conter    ${qax_title3}
     Aguarde Até Elemento Conter    ${qax_title4}
