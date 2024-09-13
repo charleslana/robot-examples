@@ -8,11 +8,12 @@ Variables           ../locators/app_common_locator.yml
 *** Variables ***
 ${ANDROID_PATH}         ${EXECDIR}/apk
 ${MENU_FORMULARIOS}     Formulários
+${APP_JSON}             app
 
 
 *** Keywords ***
 Open App
-    ${app}    Get JSON    app
+    ${app}    Get JSON    ${APP_JSON}
     ${full_app_path}    Catenate    SEPARATOR=/    ${ANDROID_PATH}    ${app}[app][android_apk]
 
     Abrir aplicativo
