@@ -58,10 +58,10 @@ jobs:
       - name: Run Android Emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 34
+          api-level: 30
           target: google_apis
           arch: x86_64
-          profile: pixel_3
+          profile: pixel_6
           script: |
             adb install apk/yodapp-beta.apk
             robot -d ./reports -v APP_JSON:app_action tests/mobile-test
